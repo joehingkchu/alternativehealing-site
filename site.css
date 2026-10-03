@@ -1,0 +1,226 @@
+/* ============================================================
+   site.css  -  Complementary and Alternative Healing University
+   Shared stylesheet. One file, no build step.
+
+   DESIGN RULE: desktop appearance is left ALONE. Every layout
+   override lives inside the max-width:768px media query, so the
+   ~3,600 existing pages render on a desktop exactly as they do
+   today. Only phones and small tablets get the new treatment.
+   ============================================================ */
+
+
+/* ---------- 1. Global, safe at every width ---------- */
+
+/* Images never overflow their container. Safe on desktop because
+   virtually every image here is already narrower than the layout. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Nothing should be able to push the page sideways. */
+html {
+  -webkit-text-size-adjust: 100%;   /* stop iOS auto-inflating text */
+  text-size-adjust: 100%;
+}
+
+
+/* ---------- 2. Phone / small tablet ---------- */
+
+@media screen and (max-width: 768px) {
+
+  /* --- 2z. Border-box everywhere ---
+     Without this, width:100% + padding overflows the viewport and the
+     text gets clipped mid-word instead of reflowing. This must come
+     first; everything below assumes it. */
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* Hard stop on width. NOTE: overflow-x is deliberately NOT hidden -
+     hiding it CLIPS text mid-word. Anything that genuinely cannot
+     shrink should scroll, never disappear. */
+  html, body {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  /* --- 2y. Layout-table stacking: DELIBERATELY NOT DONE ---
+     Tried 2026-08-05 and reverted. Stacking the nested FrontPage
+     layout tables (both `body > table` and the script-tagged
+     `table.lay`) made pages WORSE: the nav cell collapsed into a tall
+     empty colour block while the content still overflowed. These
+     layouts nest up to 4 deep and vary too much between pages for a
+     blanket rule. Pages are left un-stacked on purpose - they stay
+     readable and pan horizontally. The class="lay" tags are still in
+     the HTML, harmless, ready for a properly tuned per-archetype
+     rule once the layout archetypes have been surveyed. */
+
+  /* --- 2a. Kill the fixed pixel widths ---
+     The site has ~2,230 pages with hardcoded table widths in the
+     800-1099px range. Because width="1013" is a *presentational
+     attribute*, ordinary author CSS outrules it - no !important
+     needed. Tables collapse to the viewport and cells re-wrap. */
+  table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+    /* FrontPage litters these pages with empty spacer tables carrying
+       height="508" etc. With no width they collapse harmlessly, but
+       once we force width:100% the browser starts honouring that
+       height and injects a huge blank gap. Neutralise it. */
+    height: auto !important;
+  }
+
+  td, th {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    padding: 7px 9px !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;   /* defeat any nowrap attribute */
+  }
+
+
+  /* Long unbroken strings (URLs, Latin binomials) must not force width. */
+  p, div, li, span, font, a {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+
+  /* --- 2b. Readable type ---
+     Pages lean on <font size="2"> and Arial Narrow, which lands
+     around 10px on a phone. This audience skews older; small
+     condensed type is the single worst thing about the site on
+     mobile. Presentational <font> attributes lose to author CSS. */
+  body,
+  td, th, p, li, div, span {
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+  }
+
+  font {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: inherit !important;
+  }
+
+  /* Restore some hierarchy that the <font size> soup flattened. */
+  font[size="4"], font[size="5"], font[size="6"], font[size="7"] {
+    font-size: 20px !important;
+    font-weight: 600;
+  }
+
+  /* --- 2c. Breathing room ---
+     Inline styles set margin-top:-5px / -1px all over to tighten
+     desktop layout. On a phone that collapses lines together. */
+  /* Original pages set margin-top:-5px / -1px inline to tighten the
+     desktop layout; on a phone that collapses lines together. Reset
+     the negatives but keep real horizontal breathing room. */
+  p {
+    margin-top: 0 !important;
+    margin-bottom: 0.75em !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    line-height: 1.65 !important;
+  }
+
+  body {
+    margin: 0 !important;
+    padding: 16px 15px !important;
+  }
+
+  /* --- 2d. Tappable links ---
+     WCAG asks for ~44px touch targets. The index pages are dense
+     lists of links; without this they are near-impossible to hit. */
+  a {
+    line-height: 1.9 !important;
+    word-wrap: break-word;
+  }
+
+  li {
+    margin-bottom: 0.45em !important;
+  }
+
+  ol, ul {
+    padding-left: 1.4em !important;
+    margin-left: 0 !important;
+  }
+
+  /* --- 2f. NAVIGATION tables -> stack one item per row ---
+     The footer menu is a 5-column table of short links. At 400px each
+     column is ~75px, so "List of Health Problems" wraps over three
+     lines and the last column falls off screen. Tables tagged
+     class="navtbl" by the build script (>=4 direct cells, average cell
+     text 8-150 chars, >=50% containing links) are genuine nav menus,
+     so stacking them is correct - unlike the content layout tables,
+     which must NOT be stacked (see 2y). */
+  table.navtbl,
+  table.navtbl > tbody,
+  table.navtbl > tbody > tr,
+  table.navtbl > tbody > tr > td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  table.navtbl > tbody > tr > td {
+    border: 0 !important;
+    border-bottom: 1px solid #d0d0d0 !important;
+    padding: 12px 10px !important;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  /* Those grids carry blank spacer cells; as blocks they would become
+     empty rows of padding. Collapse anything with no real content. */
+  table.navtbl > tbody > tr > td:empty {
+    display: none !important;
+  }
+
+  table.navtbl a {
+    display: inline-block !important;
+    padding: 2px 0 !important;
+  }
+
+  /* --- 2e. Wide data tables ---
+     The herb indexes (pinyin / Latin / stroke-count) are genuine
+     multi-column data, not layout. Tag those with class="datatable"
+     during the bulk pass and they scroll sideways in their own box
+     instead of squeezing to unreadable columns. */
+  table.datatable {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+/* ---------- 3. Very small phones ---------- */
+
+@media screen and (max-width: 400px) {
+  body {
+    padding: 8px !important;
+  }
+
+  /* Nested layout tables stack their borders into visual noise
+     at this width; flatten the inner ones. */
+  table table {
+    border: 0 !important;
+  }
+}
+
+
+/* ---------- 4. Print ---------- */
+
+@media print {
+  body {
+    font-size: 12pt;
+  }
+  table {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html><head>
+<link rel="canonical" href="https://alternativehealing.org/penguin.htm">
+<link rel="stylesheet" href="site.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whack the Penguin</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body bgcolor="#000000" text="#000000">
+<p align="left"><font size="6" color="#FFFFFF">Whack the Penguin</font></p>
+<div align="left">
+  <table width="0%" border="2" cellspacing="2" cellpadding="2" height="0%">
+    <tr>
+      <td align="left" valign="middle"> 
+        <div align="left"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="650" height="400" name="Whack the Penguin">
+
+            <param name=movie value="penguin.swf">
+            <param name=quality value=high>
+            <embed src="penguin.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="650" height="400" name="Whack the Penguin">
+            </embed> 
+          </object></div>
+      </td>
+    </tr>
+  </table>
+  <p><font color="#FFFFFF">Click on the picture to make the Penguin jump then 
+	click the mouse again to get the Yetti to whack the Penguin<br>
+
+    Don't worry no harm comes to the Penguin, in fact he seems to like it! <br>
+    My highest score so far is 593.5. I not sure if you can get above 600 ?<br>
+    <font size="5">Please use the <a href="http://www.birdcheck.co.uk/cgi-bin/guestbook.cgi">
+	guestbook</a> 
+    for questions and Contact</font></font></p>
+ 
+  <SCRIPT LANGUAGE="JavaScript1.2"> 
+<!-- // 
+IE = (document.all) ? 1: 0; 
+NS = (document.layers) ? 1 : 0; 
+
+var no = 10; sp = 30; snowimg = "snow.gif"; 
+var dx, xp, yp, am, stx, sty, i, d_wth = 800, d_hgt = 400; 
+
+if (NS) { 
+d_wth = self.innerWidth; 
+d_hgt = self.innerHeight; 
+} else if (IE) { 
+d_wth = document.body.clientWidth; 
+d_hgt = document.body.clientHeight; 
+} 
+dx = new Array(); 
+xp = new Array(); 
+yp = new Array(); 
+am = new Array(); 
+stx = new Array(); 
+sty = new Array(); 
+for (i = 0; i < no; ++ i) { 
+dx[i] = 0; 
+xp[i] = Math.random()*(d_wth-50); 
+yp[i] = Math.random()*d_hgt; 
+am[i] = Math.random()*20; 
+stx[i] = 0.02 + Math.random()/10; 
+sty[i] = 0.7 + Math.random(); 
+if (NS) { 
+  if (i == 0) { 
+    document.write("<layer name=\"dot"+ i +"\" left=\"15\" "); 
+    document.write("top=\"15\" visibility=\"show\"><img src=\""); 
+    document.write(snowimg + "\" border=\"0\"></layer>"); 
+  } else { 
+    document.write("<layer name=\"dot"+ i +"\" left=\"15\" "); 
+    document.write("top=\"15\" visibility=\"show\"><img src=\""); 
+    document.write(snowimg + "\" border=\"0\"></layer>"); 
+  } 
+} else if (IE) { 
+  if (i == 0) { 
+    document.write("<div id=\"dot"+ i +"\" style=\"POSITION: "); 
+    document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: "); 
+    document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\""); 
+    document.write(snowimg + "\" border=\"0\"></div>"); 
+  } else { 
+    document.write("<div id=\"dot"+ i +"\" style=\"POSITION: "); 
+    document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: "); 
+    document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\""); 
+    document.write(snowimg + "\" border=\"0\"></div>"); 
+  } 
+} 
+} 
+
+function snowNS() { 
+  for (i = 0; i < no; ++ i) { 
+    yp[i] += sty[i]; 
+    if (yp[i] > d_hgt-50) { 
+      xp[i] = Math.random()*(d_wth-am[i]-30); yp[i] = 0; 
+      stx[i] = 0.02 + Math.random()/10; sty[i] = 0.7 + Math.random(); 
+      d_wth = self.innerWidth; d_hgt = self.innerHeight; 
+    } 
+    dx[i] += stx[i]; 
+    document.layers["dot"+i].top = yp[i]; 
+    document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]); 
+  } 
+} 
+function snowIE() { 
+  for (i = 0; i < no; ++ i) { 
+    yp[i] += sty[i]; 
+      if (yp[i] > d_hgt-50) { 
+        xp[i] = Math.random()*(d_wth-am[i]-30); yp[i] = 0; 
+        stx[i] = 0.02 + Math.random()/10; sty[i] = 0.7 + Math.random(); 
+        d_wth = document.body.clientWidth; d_hgt = 
+document.body.clientHeight; 
+      } 
+    dx[i] += stx[i]; 
+    document.all["dot"+i].style.pixelTop = yp[i]; 
+    document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]); 
+  } 
+} 
+
+if (IE) setInterval('snowIE()',sp); 
+if (NS) setInterval('snowNS()',sp); 
+
+// End --> 
+</script>
+</div>
+</body>
+
+</html>

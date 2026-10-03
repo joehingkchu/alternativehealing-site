@@ -1,0 +1,157 @@
+<!--
+  ===================================================================
+  DO NOT OPEN THIS PAGE IN MICROSOFT FRONTPAGE.
+
+  This front page uses modern web code that FrontPage (2003) does not
+  understand. If FrontPage opens and saves this file it will rewrite
+  the code and the page will look broken.
+
+  Editing the OTHER pages of the site with FrontPage is fine - they
+  are ordinary older pages.
+
+  If this page ever needs changing, ask whoever helps with the
+  website. A backup of the ORIGINAL old front page is kept as
+  index_classic.htm in this same folder.
+  ===================================================================
+--><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search &mdash; Complementary and Alternative Healing University</title>
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --jade:#2f6b52; --jade-dk:#1f4a38; --jade-lt:#eaf2ec;
+  --cinnabar:#b0472f; --gold:#a9843f;
+  --paper:#fbf8f2; --card:#fff; --ink:#22201c; --muted:#6d675d; --line:#e2dbcf;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+ font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.cjk{font-family:"Microsoft JhengHei","PingFang TC","Noto Sans CJK TC","Microsoft YaHei",sans-serif}
+a{color:var(--jade-dk);text-decoration:none}
+a:hover{color:var(--cinnabar);text-decoration:underline}
+.wrap{max-width:840px;margin:0 auto;padding:0 20px}
+header.top{background:linear-gradient(160deg,var(--jade),var(--jade-dk));color:#fff;
+ padding:26px 0;border-bottom:4px solid var(--gold)}
+header.top h1{margin:0;font:700 clamp(20px,3.4vw,27px)/1.25 Georgia,"Times New Roman",serif}
+header.top a{color:#dbe9df;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
+.box{margin:24px 0 8px;display:flex;gap:10px;flex-wrap:wrap}
+#q{flex:1 1 240px;min-width:0;padding:14px 16px;font-size:17px;border:1.5px solid #c2d2c6;
+ border-radius:8px;background:#fff;color:var(--ink)}
+#q:focus{outline:none;border-color:var(--jade);box-shadow:0 0 0 3px rgba(47,107,82,.16)}
+#go{padding:14px 26px;font-size:17px;font-weight:600;background:var(--jade);color:#fff;
+ border:0;border-radius:8px;cursor:pointer}
+#go:hover{background:var(--jade-dk)}
+#stat{color:var(--muted);font-size:14.5px;margin:6px 0 18px;min-height:1.4em}
+ol#res{list-style:none;padding:0;margin:0}
+ol#res li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--jade);
+ border-radius:9px;padding:14px 16px;margin:0 0 12px}
+ol#res .ttl{font-weight:700;font-size:17.5px;display:block;margin-bottom:3px}
+ol#res .url{color:var(--muted);font-size:13px;display:block;margin-bottom:6px;word-break:break-all}
+ol#res .snip{color:#413d37;font-size:15.5px;line-height:1.55}
+mark{background:#ffe9a8;color:inherit;padding:0 2px;border-radius:2px}
+.tips{color:var(--muted);font-size:14.5px;border-top:1px solid var(--line);margin-top:28px;padding:16px 0 40px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Search this site</h1>
+    <a href="index.htm">&larr; Home &nbsp;Complementary and Alternative Healing University</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="box">
+    <label for="q" style="position:absolute;left:-9999px">Search</label>
+    <input id="q" type="search" placeholder="herb, formula or condition &mdash; e.g. dang gui, asthma, &#40643;&#33747;" autocomplete="off">
+    <button id="go" type="button">Search</button>
+  </div>
+  <p id="stat">Loading search index&hellip;</p>
+  <ol id="res"></ol>
+  <div class="tips">
+    <p>Searches the full text of every page on this site. Works in English and Chinese
+       <span class="cjk">&#20013;&#33521;&#25991;&#30342;&#21487;</span>.
+       Type several words to narrow results &mdash; pages containing all of them rank first.</p>
+  </div>
+</div>
+
+<script src="search-index.js"></script>
+<script>
+(function(){
+  var q=document.getElementById('q'), go=document.getElementById('go'),
+      res=document.getElementById('res'), stat=document.getElementById('stat');
+
+  if(typeof IDX==='undefined'){ stat.textContent='Search index could not be loaded.'; return; }
+  stat.textContent = IDX.length.toLocaleString()+' pages indexed. Type to search.';
+
+  function esc(s){ return s.replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function hl(text,terms){
+    var out=esc(text);
+    terms.forEach(function(t){
+      if(!t) return;
+      var re=new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+      out=out.replace(re,'<mark>$1</mark>');
+    });
+    return out;
+  }
+
+  function snippet(x,terms){
+    var lx=x.toLowerCase(), at=-1;
+    for(var i=0;i<terms.length;i++){ var p=lx.indexOf(terms[i]); if(p>-1){ at=p; break; } }
+    if(at<0) at=0;
+    var s=Math.max(0,at-70), e=Math.min(x.length,s+240);
+    return (s>0?'…':'')+x.slice(s,e)+(e<x.length?'…':'');
+  }
+
+  function run(){
+    var raw=q.value.trim();
+    res.innerHTML='';
+    if(!raw){ stat.textContent=IDX.length.toLocaleString()+' pages indexed. Type to search.'; return; }
+    var terms=raw.toLowerCase().split(/\s+/).filter(Boolean);
+    var hits=[];
+    for(var i=0;i<IDX.length;i++){
+      var d=IDX[i], lt=d.t.toLowerCase(), lx=d.x.toLowerCase(), lu=d.u.toLowerCase(), score=0, all=true;
+      for(var j=0;j<terms.length;j++){
+        var t=terms[j], s=0;
+        if(lt.indexOf(t)>-1) s+=10;
+        if(lu.indexOf(t)>-1) s+=6;
+        if(lx.indexOf(t)>-1) s+=3;
+        if(s===0){ all=false; break; }
+        score+=s;
+      }
+      if(all){ hits.push({d:d,s:score}); }
+    }
+    hits.sort(function(a,b){ return b.s-a.s; });
+    stat.textContent = hits.length===0 ? 'No pages found for "'+raw+'".'
+      : hits.length+' page'+(hits.length===1?'':'s')+' found for "'+raw+'"'+(hits.length>200?' (showing first 200)':'');
+    var lim=Math.min(hits.length,200), f=document.createDocumentFragment();
+    for(var k=0;k<lim;k++){
+      var d=hits[k].d, li=document.createElement('li');
+      li.innerHTML='<a class="ttl" href="'+encodeURI(d.u)+'">'+(hl(d.t||d.u,terms))+'</a>'+
+                   '<span class="url">'+esc(d.u)+'</span>'+
+                   '<span class="snip">'+hl(snippet(d.x,terms),terms)+'</span>';
+      f.appendChild(li);
+    }
+    res.appendChild(f);
+  }
+
+  var timer=null;
+  q.addEventListener('input',function(){ clearTimeout(timer); timer=setTimeout(run,180); });
+  q.addEventListener('keydown',function(e){ if(e.key==='Enter'){ clearTimeout(timer); run(); } });
+  go.addEventListener('click',run);
+
+  // support ?q=... coming from the homepage search box
+  var m=/[?&]q=([^&]*)/.exec(location.search);
+  if(m){ q.value=decodeURIComponent(m[1].replace(/\+/g,' ')); run(); }
+  q.focus();
+})();
+</script>
+</body>
+</html>

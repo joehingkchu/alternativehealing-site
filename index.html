@@ -1,0 +1,454 @@
+<!--
+  ===================================================================
+  DO NOT OPEN THIS PAGE IN MICROSOFT FRONTPAGE.
+
+  This front page uses modern web code that FrontPage (2003) does not
+  understand. If FrontPage opens and saves this file it will rewrite
+  the code and the page will look broken.
+
+  Editing the OTHER pages of the site with FrontPage is fine - they
+  are ordinary older pages.
+
+  If this page ever needs changing, ask whoever helps with the
+  website. A backup of the ORIGINAL old front page is kept as
+  index_classic.htm in this same folder.
+  ===================================================================
+--><!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://alternativehealing.org/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Complementary and Alternative Healing University &#20013;&#34277;&#35422;&#20856;</title>
+<meta name="description" content="A bilingual reference on Traditional Chinese Medicine by Joe Hing Kwok Chu: Chinese herb dictionary, health problems, herbal formulae, qigong and acupuncture.">
+<style>
+:root{
+  --jade:#2f6b52; --jade-dk:#1f4a38; --jade-lt:#eaf2ec;
+  --cinnabar:#b0472f; --gold:#a9843f;
+  --paper:#fbf8f2; --card:#ffffff;
+  --ink:#22201c; --muted:#6d675d; --line:#e2dbcf;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.cjk,:lang(zh){font-family:"Microsoft JhengHei","PingFang TC","Noto Sans CJK TC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+a{color:var(--jade-dk);text-decoration:none}
+a:hover{color:var(--cinnabar);text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ---------- masthead ---------- */
+header.top{
+  background:linear-gradient(160deg,var(--jade) 0%,var(--jade-dk) 100%);
+  color:#fff; padding:44px 0 38px; border-bottom:4px solid var(--gold);
+}
+header.top h1{
+  margin:0 0 6px; font:700 clamp(23px,4.4vw,36px)/1.25 Georgia,"Times New Roman",serif;
+  letter-spacing:.2px;
+}
+header.top .zh{
+  display:block; margin-top:8px; font-size:clamp(19px,3.4vw,27px); font-weight:400;
+  color:#dbe9df; letter-spacing:.14em;
+}
+header.top p.tag{margin:14px 0 0;color:#cddfd4;font-size:15.5px;max-width:60ch}
+header.top p.by{margin:12px 0 0;font-size:14.5px}
+header.top p.by a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- search ---------- */
+.searchbar{background:var(--jade-lt);border-bottom:1px solid var(--line);padding:20px 0}
+.searchbar form{display:flex;gap:10px;flex-wrap:wrap}
+.searchbar input[type=search]{
+  flex:1 1 260px; min-width:0; padding:13px 15px; font-size:16.5px;
+  border:1.5px solid #c2d2c6; border-radius:7px; background:#fff; color:var(--ink);
+}
+.searchbar input[type=search]:focus{outline:none;border-color:var(--jade);box-shadow:0 0 0 3px rgba(47,107,82,.16)}
+.searchbar button{
+  padding:13px 24px;font-size:16.5px;font-weight:600;cursor:pointer;
+  background:var(--jade);color:#fff;border:0;border-radius:7px;
+}
+.searchbar button:hover{background:var(--jade-dk)}
+.searchbar .hint{margin:9px 0 0;font-size:13.5px;color:var(--muted)}
+
+/* ---------- section headings ---------- */
+h2.sec{
+  font:700 clamp(20px,3vw,25px)/1.3 Georgia,"Times New Roman",serif;
+  margin:44px 0 4px; color:var(--jade-dk);
+}
+h2.sec .zh{font-weight:400;color:var(--muted);font-size:.76em;margin-left:9px}
+.rule{height:3px;width:56px;background:var(--gold);border-radius:2px;margin:0 0 22px}
+
+/* ---------- cards ---------- */
+.cards{display:grid;gap:15px;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));margin:0 0 8px;padding:0;list-style:none}
+.cards li{margin:0}
+.cards a{
+  display:block;height:100%;background:var(--card);border:1px solid var(--line);
+  border-left:4px solid var(--jade); border-radius:9px; padding:17px 18px;
+  transition:box-shadow .15s ease,transform .15s ease,border-color .15s ease;
+}
+.cards a:hover{text-decoration:none;box-shadow:0 5px 18px rgba(31,74,56,.13);transform:translateY(-2px);border-left-color:var(--cinnabar)}
+.cards .t{display:block;font-weight:700;font-size:17.5px;color:var(--jade-dk)}
+.cards .z{display:block;margin-top:3px;color:var(--muted);font-size:15px}
+.cards .d{display:block;margin-top:7px;color:var(--muted);font-size:14.5px;line-height:1.5}
+
+/* ---------- A-Z list ---------- */
+#filter{
+  width:100%;padding:12px 15px;font-size:16.5px;margin:0 0 8px;
+  border:1.5px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);
+}
+#filter:focus{outline:none;border-color:var(--jade);box-shadow:0 0 0 3px rgba(47,107,82,.14)}
+#count{font-size:14px;color:var(--muted);margin:0 0 16px}
+.hp{columns:2;column-gap:34px}
+h3.ltr{
+  break-after:avoid; margin:16px 0 7px; font:700 15px/1 Georgia,serif;
+  color:var(--cinnabar); letter-spacing:.16em; border-bottom:1px solid var(--line); padding-bottom:5px;
+}
+ul.hplist{list-style:none;margin:0 0 14px;padding:0;break-inside:auto}
+ul.hplist li{margin:0 0 3px;break-inside:avoid}
+ul.hplist a{display:block;padding:7px 9px;border-radius:6px;font-size:16px;line-height:1.45}
+ul.hplist a:hover{background:var(--jade-lt);text-decoration:none}
+.noresult{color:var(--muted);font-style:italic;padding:14px 0}
+
+/* ---------- footer ---------- */
+footer.bot{margin-top:52px;background:#25352c;color:#c9d6cd;padding:30px 0 34px}
+footer.bot a{color:#e3ece5;text-decoration:none}
+footer.bot a:hover{color:#fff;text-decoration:underline}
+footer.bot .fgrid{display:grid;gap:11px 26px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-bottom:20px}
+footer.bot .fgrid a{display:block;padding:5px 0;font-size:15.5px}
+footer.bot .fine{border-top:1px solid #3a4c41;padding-top:17px;font-size:13.5px;line-height:1.75;color:#9fb0a5}
+footer.bot .fine a{text-decoration:underline}
+
+@media (max-width:720px){
+  .hp{columns:1}
+  header.top{padding:32px 0 28px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Complementary and Alternative Healing University
+      <span class="zh cjk">&#20013;&#34277;&#35422;&#20856;</span></h1>
+    <p class="tag">A bilingual reference on Traditional Chinese Medicine &mdash; herbs, formulae,
+       health problems, qigong and acupuncture. In English and Chinese <span class="cjk">&#20013;&#33521;&#25991;</span>.</p>
+    <p class="by">by <a href="teaching_experience_of_joe_h.htm">Joe Hing Kwok Chu</a>
+       <span class="cjk">&#26417;&#33288;&#22283;&#32232;&#35695;</span></p>
+  </div>
+</header>
+
+<div class="searchbar">
+  <div class="wrap">
+    <form action="search.htm" method="get" role="search">
+      <input type="search" name="q" placeholder="Search herbs, formulae, conditions&hellip;" aria-label="Search this site">
+      <button type="submit">Search</button>
+    </form>
+    <p class="hint">Searches all pages on this site &mdash; herb names, Chinese names, conditions and formulae.
+       <span class="cjk">&#22312;&#26412;&#32178;&#31449;&#25214;&#36039;&#26009;</span></p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <h2 class="sec">Main Sections <span class="zh cjk">&#20027;&#35201;&#20839;&#23481;</span></h2>
+  <div class="rule"></div>
+  <ul class="cards">
+    <li><a href="chinese_herbs_dictionary.htm"><span class="t">Chinese Herb Dictionary</span><span class="z cjk">&#20013;&#34277;&#35422;&#20856;</span><span class="d">Herbs indexed by Latin name, pinyin and Chinese stroke count.</span></a></li>
+    <li><a href="list_of_health_problems.htm"><span class="t">List of Health Problems</span><span class="z cjk">&#30149;&#30151;&#32317;&#35261;</span><span class="d">Conditions with herbal and acupuncture approaches.</span></a></li>
+    <li><a href="chinese_herb_formulae.htm"><span class="t">Herbal Formulae</span><span class="z cjk">&#26041;&#21058;</span><span class="d">Sample classical and modern formulations.</span></a></li>
+    <li><a href="traditional_chinese_medicine.htm"><span class="t">Traditional Chinese Medicine</span><span class="z cjk">&#20013;&#37291;</span><span class="d">Theory, diagnosis and core terminology.</span></a></li>
+    <li><a href="acupuncture_and_moxibustion.htm"><span class="t">Acupuncture &amp; Moxibustion</span><span class="z cjk">&#37341;&#28792;</span><span class="d">Points, channels and treatment notes.</span></a></li>
+    <li><a href="qigong.htm"><span class="t">Qigong</span><span class="z cjk">&#27683;&#21151;</span><span class="d">Practice, medical application and classes.</span></a></li>
+  </ul>
+
+  <h2 class="sec">Safety &amp; Reference <span class="zh cjk">&#23433;&#20840;&#33287;&#21443;&#32771;</span></h2>
+  <div class="rule"></div>
+  <ul class="cards">
+    <li><a href="herb_toxicity.htm"><span class="t">Toxicity of Some Herbs</span><span class="d">Herbs requiring caution.</span></a></li>
+    <li><a href="side_effect_of_some_herbs.htm"><span class="t">Side Effects of Some Herbs</span><span class="d">Reported adverse effects.</span></a></li>
+    <li><a href="herb_toxic_to_kidneys.htm"><span class="t">Herbs Toxic to Kidneys</span><span class="d">Renal safety warnings.</span></a></li>
+    <li><a href="tcm_diagnosis.htm"><span class="t">TCM Diagnosis</span><span class="d">Diagnostic method and patterns.</span></a></li>
+    <li><a href="common_terms_of_traditional_Chinese_medicine.htm"><span class="t">Terms of TCM</span><span class="d">Glossary of common terms.</span></a></li>
+    <li><a href="drug_dictionary.htm"><span class="t">Prescribed Drug Dictionary</span><span class="d">Conventional drug reference.</span></a></li>
+  </ul>
+
+  <h2 class="sec">Health Problems A&ndash;Z <span class="zh cjk">&#30149;&#30151;&#32034;&#24341;</span></h2>
+  <div class="rule"></div>
+  <label for="filter" style="position:absolute;left:-9999px">Filter conditions</label>
+  <input id="filter" type="search" placeholder="Type to filter the list below&hellip;  e.g. asthma, eczema, &#39640;&#34880;&#22739;" autocomplete="off">
+  <p id="count"></p>
+  <div class="hp" id="hp">
+  <h3 class="ltr" id="ltr-#">#</h3>
+  <ul class="hplist">
+    <li><a href="herpes_simplex_II_Chinese_herb.htm">&#29983;&#27542;&#22120;</a></li>
+    <li><a href="human_herpes_virus_type_6.htm">&#20154; &#39006;&#30384;&#30137;&#30149;&#27602;6&#22411;</a></li>
+    <li><a href="chronic_fatigue_syndrome.htm">&#24930; &#24615;&#30130;&#21214; &#32508;&#21512;&#30151;</a></li>
+    <li><a href="brachial_plexus_palsy_chinese.htm">&#33218; &#31070;&#32147;&#21474;&#40635;&#30202;</a></li>
+    <li><a href="Central%20Progressive%20Retina%20Atrophy.htm">&#20013; &#24515;&#24615;&#28479;&#28082;&#24615;&#33032;&#32097;&#33180;&#35222;&#32178;&#33180;&#30149;&#35722;</a></li>
+    <li><a href="wen_pi_tang_on_kidney_failure.htm">&#24930;&#24615;&#33102;&#21151;&#33021;&#19981;&#20840;</a></li>
+    <li><a href="stiff_neck.htm">&#33853;&#26517;</a></li>
+    <li><a href="varicocele_of_spermatic_vein.htm">&#31934;&#32034;&#38748;&#33032;&#26354;&#24373;</a></li>
+    <li><a href="Vagina_yeast_infection_herb_formula1.htm">&#24565;&#29664;&#29699;&#33740;&#24863;&#26579;&#65292;&#30333;&#24118;</a></li>
+    <li><a href="hyperthyroism_chinese_herbs_Pin%20Yin%20fu%20fang.htm">&#30002;&#29376;&#33146;&#27231;&#33021;&#20130;&#36914;</a></li>
+    <li><a href="Shingles_treated_with_liu_shen_wan.htm">&#24118;&#29376;&#30384;&#30137;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-A">A</h3>
+  <ul class="hplist">
+    <li><a href="ge_gen_tang.htm">Acute fibrositis &#24613;&#24615;&#38968;&#26894;&#38364;&#31680;&#21608;&#22285;&#28814; (&#33853;&#26517;)</a></li>
+    <li><a href="acute_promyelocytic_leukemia.htm">Acute Promyelocytic Leukemia</a></li>
+    <li><a href="alopecia_areata.htm">Alopecia areata &#29677;&#31167;</a></li>
+    <li><a href="ALT_AST_lowering_formula.htm">ALT and AST Elevated, &#31296;&#19993;&#36681;&#27688;&#37238;&#33287;&#31296;&#33609;&#36681;&#27688;&#37238;&#22686;&#39640;</a></li>
+    <li><a href="Alzheimer's_disease.htm">Alzheimer&#39;s Disease</a></li>
+    <li><a href="amenorrhea_acupressure.htm">Amenorrhea &#28961;&#26376;&#32147;</a></li>
+    <li><a href="anti_aging_effect_of_qigong_and_male_and_female_hormones.htm">Anti-aging</a></li>
+    <li><a href="aplastic_anemia_herb_treatment.htm">Aplastic anemia &#20877;&#29983;&#38556;&#31001;&#24615;&#36007;&#34880;</a></li>
+    <li><a href="appendicitis.htm">Appendicitis &#30450;&#33144;&#28814;</a></li>
+    <li><a href="asthma.htm">Asthma, &#21742;&#21912;</a></li>
+    <li><a href="asthma_geriatric_herb_therapy.htm">Asthma-Geriatric, &#32769;&#20154;&#21742;&#21912;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-B">B</h3>
+  <ul class="hplist">
+    <li><a href="primary_biliary_cirrhosis.htm">Biliary Cirrhosis, Primary, &#21407;&#30332;&#24615;&#33213;&#31649;&#24615;&#32925;&#30828;&#21270;</a></li>
+    <li><a href="Menses_Heavy_Bleeding.htm">Bleeding, heavy in menses &#26376;&#32147;&#36942;&#22810;</a></li>
+    <li><a href="blepharitis.htm">Blepharitis &#30524;&#30652;&#28814;</a></li>
+    <li><a href="Thrombosis.htm">Blood Clots (thrombosis) &#34880;&#31649;&#22622;&#20303;</a></li>
+    <li><a href="wu_wei_xiao_du_yin.htm">Boils and Carbuncles &#30320;&#30241;&#30308;&#33131;</a></li>
+    <li><a href="bone_spurs.htm">Bone Spurs &#39592;&#21050;&#22686;&#29983;</a></li>
+    <li><a href="brachial_plexus_palsy.htm">Brachial Plexus Palsy</a></li>
+    <li><a href="drooping_breasts.htm">Breasts Droopy &#20083;&#25151;&#19979;&#22402;</a></li>
+    <li><a href="aging_brown_spots.htm">Brown Spot from Aging &#32769;&#24180;&#40644;&#35088;&#26001;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-C">C</h3>
+  <ul class="hplist">
+    <li><a href="gall_bladder_stone.htm">Calculus in Gall Bladder &#33213;&#22218;&#32080;&#30707;</a></li>
+    <li><a href="cancer.htm">Cancer &#30284;&#30151;</a></li>
+    <li><a href="cataract.htm">Cataract &#30333;&#20869;&#38556;</a></li>
+    <li><a href="chronic_morning_diarrhea.htm">Chronic Diarrhea in the Morning &#24930;&#24615;&#26089;&#26216;&#33145;&#28681;</a></li>
+    <li><a href="lead_poisoning.htm">Chronic Lead Poisoning &#24930;&#24615;&#37467;&#20013;&#27602;</a></li>
+    <li><a href="chronic_middle_ear_infection.htm">Chronic middle Ear Infection &#24930;&#24615;&#20013;&#32819;&#24863;&#26579;&#30332;&#28814;</a></li>
+    <li><a href="chronic_myelogenous_leukemia.htm">Chronic Myelogenous Leukemia &#24930;&#24615;&#31890;&#32048;&#32990;&#24615;&#30333;&#34880;&#30149;</a></li>
+    <li><a href="sclerosis_impotence.htm">Cirrhosis &#32925;&#30828;&#21270;</a></li>
+    <li><a href="live_loach_therapy_on_cirrhosis.htm">Cirrhosis of liver, a folk therapy (research report)</a></li>
+    <li><a href="colitis_herb.htm">Colitis-diarrhea &#32080;&#33144;&#28814;</a></li>
+    <li><a href="coma_vegetative_state_acupuncture_treatment.htm">Coma/vegetative State &#26127;&#36855;/&#26893;&#29289;&#20154;</a></li>
+    <li><a href="common_cold.htm">Common Cold &#20663;&#39080; &#24863;&#20882;</a></li>
+    <li><a href="conjunctivitis.htm">Conjunctivitis</a></li>
+    <li><a href="zhi_shi_da_huang_tang.htm">Constipation with syndrome</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-D">D</h3>
+  <ul class="hplist">
+    <li><a href="dengue_fever.htm">Dengue Fever &#30331;&#38761;&#29105;</a></li>
+    <li><a href="diabetes.htm">Diabetes</a></li>
+    <li><a href="diarrhea_acute_bacterial_infection_formula.htm">Diarrhea acute bacterial infection</a></li>
+    <li><a href="diarrhea_chronic.htm">Diarrhea-chronic &#24930;&#24615;&#33145;&#28681;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-E">E</h3>
+  <ul class="hplist">
+    <li><a href="wu_shao_she_xiao_feng_yin.htm">Eczema -chronic or urticaria &#24930;&#24615;&#28629;&#30137;&#12289;&#34113;&#40635;&#30137;</a></li>
+    <li><a href="eczema_of_children.htm">Eczema of Children &#23567;&#20818;&#28629;&#30137;</a></li>
+    <li><a href="eczema_with_blood_heat.htm">Eczema with blood heat &#34880;&#29105;&#22411;&#28629;&#30137;</a></li>
+    <li><a href="ejaculation_difficulty.htm">Ejaculation difficulty &#24615;&#20132;&#19981;&#23556;&#31934;</a></li>
+    <li><a href="endometrial_hyperplasia.htm">Endometrial hyperplasia &#20839;&#33180;&#22686;&#29983;</a></li>
+    <li><a href="eye_viral_infection_herb.htm">Eye Viral Infection &#30149;&#27602;&#24615;&#30524;&#30555;&#32080;&#33180;&#28814;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-F">F</h3>
+  <ul class="hplist">
+    <li><a href="Facial_nerve_palsy_acupuncture_treatment.htm">Facial nerve palsy &#33225;&#37096;&#31070;&#32147;&#40635;&#30202;</a></li>
+    <li><a href="hot_feet.htm">Feet bottom get hot &#33139;&#24213;&#30332;&#29105;</a></li>
+    <li><a href="fish_bones_lodged_in_throat.htm">Fish bone stuck in throat &#39770;&#39592;&#21345;&#21897;</a></li>
+    <li><a href="decrease_of_hypophysis_frontal_lobe_herb.htm">Frontal lobe of hypophysis (pituitary) function decrease after child birth &#29987;&#24460;&#33126;&#19979;&#22402;&#39636;&#21069;&#38913;&#21151;&#33021;&#20943;&#36864;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-G">G</h3>
+  <ul class="hplist">
+    <li><a href="ba_qia_yin.htm">Genital wart (condyloma acuminata) with infection &#23574;&#37555; &#28629;&#29105;&#30115;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-H">H</h3>
+  <ul class="hplist">
+    <li><a href="hypertension.htm">High blood pressure &#39640;&#34880;&#22739;</a></li>
+    <li><a href="baldness_herb.htm">Hair falling due Over Active Fatty Glands &#30382;&#33026;&#24615;&#33073;&#39662;</a></li>
+    <li><a href="hand_foot_mouth_disease.htm">Hand Foot and Mouth Disease &#25163;&#36275;&#21475;&#30149;</a></li>
+    <li><a href="headaches.htm">Headaches</a></li>
+    <li><a href="luan_fa_ji_zi_gao.htm">Heat sores or herpes simple I of little children &#29105;&#30241;</a></li>
+    <li><a href="hemorrhoid_acupuncture.htm">Hemorrhoid,_acupuncture &#30164;&#30241;&#37341;&#28792;&#27835;&#30274;&#27861;</a></li>
+    <li><a href="Hepatitis_b_formulae.htm">Hepatitis B &#20057;&#22411;&#32925;&#28814;</a></li>
+    <li><a href="herb_formulae_for_hepatitis_b.htm">Hepatitis B &mdash; herbal formulae</a></li>
+    <li><a href="li_zhi_san.htm">Hernia, swollen testes&#30109;&#27683;&#65104;&#30590; &#20024;&#33131; &#22823;</a></li>
+    <li><a href="hiccups.htm">Hiccups &#25171;&#21981;</a></li>
+    <li><a href="twenty_years%20study%20on%20qigong%20and%20strokes.htm">Hypertension &#34880;&#22739;&#39640;</a></li>
+    <li><a href="hyperthyroidism.htm">Hyperthyroidism &#30002;&#29376;&#33146;&#21151;&#33021;&#20130;&#36914;</a></li>
+    <li><a href="hypokalemic_periodic_paralysis.htm">hypokalemic periodic paralysis</a></li>
+    <li><a href="hypomenorrhea.htm">Hypomenorrhea &#32147;&#34880;&#30701;&#23569;</a></li>
+    <li><a href="hypothyroidism.htm">Hypothyroidism &#30002;&#29376;&#33146;&#21151;&#33021;&#20302;&#19979;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-I">I</h3>
+  <ul class="hplist">
+    <li><a href="sexual_dysfunction.htm">Impotence &#38525;&#30207;</a></li>
+    <li><a href="incontinence.htm">Incontinence &#23615;&#22833;&#31105;</a></li>
+    <li><a href="liver_qi_stagnation.htm">Insomnia due to liver qi stagnation &#32925;&#27683;&#39729;&#32080;&#32780;&#22833;&#30496;</a></li>
+    <li><a href="Insomnia.htm">Insomnia-persistent &#38929; &#22266;&#24615;&#22833;&#30496;</a></li>
+    <li><a href="interstitial_cystitis_herb.htm">Interstitial Cystitis &#38291;&#36074;&#24615;&#33152;&#33009;&#28814;</a></li>
+    <li><a href="anemia_formula.htm">Iron Deficiency Anemia in Pregnancy &#25079;&#23381;&#26399;&#32570;&#37941;&#24615;&#36007;&#34880;</a></li>
+    <li><a href="itchiness_herb.htm">Itchiness &#30382;&#33178; &#30332;&#30306;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-K">K</h3>
+  <ul class="hplist">
+    <li><a href="wen_pi_tang_on_kidney_failure_in_English.htm">Kidney function, chronically low</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-L">L</h3>
+  <ul class="hplist">
+    <li><a href="lupus.htm">Lupus-systemic &#31995;&#32113;&#24615;&#32005;&#26001; &#29436;&#30241;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-M">M</h3>
+  <ul class="hplist">
+    <li><a href="acute_mastitis_sample_formula.htm">Mastitis, acute, early stage &#21021;&#26399;&#24613;&#24615;&#20083;&#25151;&#28814;</a></li>
+    <li><a href="milk_promoting_formulae.htm">Milk of new mother, lack of &#29987;&#24460;&#28961;&#20083;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-N">N</h3>
+  <ul class="hplist">
+    <li><a href="nail_fungal_infection.htm">Nail Fungal Infection</a></li>
+    <li><a href="nose_bleeding.htm">Nose Bleed &#27969; &#40763;&#34880;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-O">O</h3>
+  <ul class="hplist">
+    <li><a href="obesity_herb.htm">Obesity</a></li>
+    <li><a href="oesteomyelitis_herb_therapy.htm">Oesteomyelitis &#39592;&#30141;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-P">P</h3>
+  <ul class="hplist">
+    <li><a href="penis_too_short.htm">Penis Overly Short &#38512;&#33686;&#36942;&#30701;</a></li>
+    <li><a href="peptic_ulcer.htm">Peptic ulcers &#32963;&#65292;&#21313;&#20108;&#25351;&#33144;&#28528;&#30221;</a></li>
+    <li><a href="periodontitis%20herbs%20formula.htm">Periodontitis or pyorrhea and Gingivitis</a></li>
+    <li><a href="qing_re_chu_bi_tang.htm">Postpartum Arthritis &#29987;&#24460;&#38364;&#31680;&#28814;</a></li>
+    <li><a href="postural_hypotension.htm">Postural Hypotension</a></li>
+    <li><a href="pregnancy_nausea.htm">Pregnancy nausea</a></li>
+    <li><a href="premature_ejaculation_Herb.htm">Premature ejaculation</a></li>
+    <li><a href="premature_ovary_failure.htm">Premature Ovarian Aging &#21365;&#24034;&#26089; &#34928;</a></li>
+    <li><a href="premenstrual_mood_disorder.htm">Premenstrual mood disorder</a></li>
+    <li><a href="prostate_cancer.htm">Prostate Cancer &#21069;&#21015;&#33146;&#30284;</a></li>
+    <li><a href="urination_difficulty_due_to_prostate_enlargement.htm">Prostate Enlargement and urination difficulty &#21069;&#21015;&#33146;&#33131;&#22823;&#65292;&#25490;&#23615;&#22256;&#38627;&#12290;</a></li>
+    <li><a href="Prostate_inflammation.htm">Prostate Inflammation &#21069;&#21015;&#33146;&#30332;&#28814;</a></li>
+    <li><a href="proteinuria_herb_therapy.htm">Proteinuria &#34507;&#30333;&#23615;</a></li>
+    <li><a href="psoriasis.htm">Psoriasis &#37504;&#30175;&#30149;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-R">R</h3>
+  <ul class="hplist">
+    <li><a href="re_ji.htm">rè j&#299; (heat retention)</a></li>
+    <li><a href="find_answer.htm">Research Librarian</a></li>
+    <li><a href="restless_leg_syndrome.htm">Restless leg syndrome &#19981;&#23433;&#33151;</a></li>
+    <li><a href="rosacea.htm">Rosacea &#37202;&#28195;&#40763;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-S">S</h3>
+  <ul class="hplist">
+    <li><a href="SARS_treatment.htm">SARS</a></li>
+    <li><a href="scleredema%20.htm">Scleredema neonatorum (SN)</a></li>
+    <li><a href="seizures.htm">Seizures</a></li>
+    <li><a href="shingles.htm">Shingles</a></li>
+    <li><a href="chronic_sinus_inflammation.htm">Sinus infection--chronic &#24930;&#24615;&#40763;&#31431;&#28814;</a></li>
+    <li><a href="smoking_tobacco.htm">Smoking (tobacco )</a></li>
+    <li><a href="snoring_herb.htm">Snoring, elderly &#32769;&#24180;&#25171;&#40766;</a></li>
+    <li><a href="wu_zi_yan_zong_wan.htm">Sperm count and sperm activity - low &#31934;&#23376;&#25976;&#37327;&#23569;&#65292;&#27963;&#21205;&#21147;&#20302;&#19979;</a></li>
+    <li><a href="strokes.htm">Strokes</a></li>
+    <li><a href="stroke_sequela_external_herb.htm">Strokes sequela with swollen limbs</a></li>
+    <li><a href="hordeolumz_herb_and_drugl_treatment.htm">Stye (hordeolum) &#40613;&#31890;&#33131;&#22806;&#27835;&#27861;</a></li>
+    <li><a href="swine_flu_herb.htm">Swine flu preventing herb formula</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-T">T</h3>
+  <ul class="hplist">
+    <li><a href="TMJ_massage_therapy.htm">temporomandibular joint dysfunction syndrome, massage therapy&#25512;&#25343;&#27835;&#30274;&#39027;&#38940;&#38364;&#31680;&#21151;&#33021;&#32010;&#20098;&#30151;</a></li>
+    <li><a href="tension_headaches.htm">Tension headaches</a></li>
+    <li><a href="threaten_abortion.htm">Threaten Abortion &#20808;&#20806;&#27969;&#29986;</a></li>
+    <li><a href="thrombocytosis.htm">Thrombocytosis (excess platelets ) &#34880;&#23567;&#26495;&#36942;&#22810;</a></li>
+    <li><a href="thrush_infection_folk_medicine.htm">Thrust (oral infection of Candida) &#21475;&#37096;&#24565;&#29664;&#29699;&#33740;&#24863;&#26579;</a></li>
+    <li><a href="hyperthyroidism_herb_treatment.htm">Thyroid Overactive</a></li>
+    <li><a href="transient_ischemic_attacks.htm">TIA</a></li>
+    <li><a href="tinnitus.htm">tinnitus &#32819;&#40180;</a></li>
+    <li><a href="tonsil_stones.htm">Tonsil Stones &#25153;&#26691;&#33146;&#32080;&#30707;</a></li>
+    <li><a href="torticollis.htm">Torticollis</a></li>
+    <li><a href="torticollis_of_babies.htm">Torticollis of babies &#23567;&#20818;&#26012;&#38968;</a></li>
+    <li><a href="traumatic_brain_injury.htm">Traumatic brain injuries &#21109;&#20663;&#24615;&#33126;&#25613;&#20663;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-U">U</h3>
+  <ul class="hplist">
+    <li><a href="ulcerated_chronic_colitis.htm">Ulcerated chronic colitis &#28528;&#30221;&#24615;&#24930;&#24615;&#32080;&#33144;&#28814;</a></li>
+    <li><a href="urinary_track_infection.htm">Urinary Tract Infection &#23615;&#36947;&#24863;&#26579;</a></li>
+    <li><a href="urticaria_of_babies.htm">Urticaria of Babies &#23567;&#20818;&#39080;&#30137;</a></li>
+    <li><a href="uterus_prolapse.htm">Uterus Prolapse &#23376;&#23470;&#19979;&#22402;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-V">V</h3>
+  <ul class="hplist">
+    <li><a href="vagina_bacterial_infection_herb.htm">Vagina Bacterial Infection &#38512;&#36947;&#32454;&#33740;&#24863;&#26579;</a></li>
+    <li><a href="vertigo.htm">Vertigo &#30505;&#26248;</a></li>
+    <li><a href="vertigo_after_influenza.htm">Vestibular Neuronitis: vertigo After Influenza &#24863;&#20882;&#30154;&#30290;&#24460;&#30505;&#26197;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-W">W</h3>
+  <ul class="hplist">
+    <li><a href="flat_warts.htm">Warts, flat warts &#25153;&#24179;&#30115;</a></li>
+    <li><a href="white_cell_count_improving_herb.htm">White Cell Count is low - caused by chemotherapy &#21270;&#30274;&#24433;&#21709;&#30333;&#34880;&#29699;&#25968;&#37327;&#20302;&#19979;</a></li>
+    <li><a href="hair_growth.htm">White Hair and balding &#30333;&#39662;&#65292;&#31167;&#39662;</a></li>
+    <li><a href="premature_white_hair.htm">White Hair, (premature) &#23569;&#24180;&#30333;&#39662;</a></li>
+  </ul>
+  <h3 class="ltr" id="ltr-Y">Y</h3>
+  <ul class="hplist">
+    <li><a href="yeast_infection.htm">Yeast Infection</a></li>
+  </ul>
+
+  </div>
+  <p class="noresult" id="noresult" hidden>No conditions match that filter.</p>
+
+</main>
+
+<footer class="bot">
+  <div class="wrap">
+    <div class="fgrid">
+      <a href="index_classic.htm">Classic Home Page</a>
+      <a href="thedao_home.htm">The Dao &mdash; Qigong Instruction</a>
+      <a href="search_this_site.htm">Search this Site</a>
+      <a href="search_this_site_Chinese.htm" class="cjk">&#22312;&#26412;&#32178;&#31449;&#25214;&#36039;&#26009;</a>
+      <a href="bioChemistry_dictionaries.htm">Biochemistry Dictionary</a>
+      <a href="general_online_library.htm">General Online Library</a>
+      <a href="qigong_classes.htm">Qigong Classes</a>
+      <a href="find_answer.htm">Research Librarian</a>
+      <a href="contact_us.htm">Contact Us</a>
+      <a href="disclaimer.htm">Disclaimer</a>
+      <a href="copyright_notice.htm">Copyright Notice</a>
+    </div>
+    <div class="fine">
+      <p><strong>Disclaimer:</strong> This site is for educational and reference purposes only and is not
+      medical advice. Chinese herbs can interact with medicines and some are toxic. Consult a qualified
+      practitioner before using any herb or formula. See the full <a href="disclaimer.htm">disclaimer</a>.</p>
+      <p>&copy; Joe Hing Kwok Chu &mdash; <a href="copyright_notice.htm">Copyright Notice</a>
+         <span class="cjk">&#29256;&#27402;&#25152;&#26377;</span></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('filter'), hp=document.getElementById('hp'),
+      cnt=document.getElementById('count'), nores=document.getElementById('noresult');
+  if(!f||!hp) return;
+  var items=[].slice.call(hp.querySelectorAll('li')),
+      heads=[].slice.call(hp.querySelectorAll('h3.ltr')),
+      lists=[].slice.call(hp.querySelectorAll('ul.hplist'));
+  function label(n){ return n+(n===1?' condition':' conditions'); }
+  cnt.textContent=label(items.length)+' listed';
+  function run(){
+    var q=f.value.trim().toLowerCase(), shown=0;
+    items.forEach(function(li){
+      var hit = !q || li.textContent.toLowerCase().indexOf(q)>-1;
+      li.hidden=!hit; if(hit) shown++;
+    });
+    lists.forEach(function(ul,i){
+      var any=[].slice.call(ul.querySelectorAll('li')).some(function(li){return !li.hidden;});
+      ul.hidden=!any; if(heads[i]) heads[i].hidden=!any;
+    });
+    cnt.textContent = q ? label(shown)+' match "'+f.value.trim()+'"' : label(items.length)+' listed';
+    nores.hidden = shown>0;
+  }
+  f.addEventListener('input',run);
+})();
+</script>
+
+</body>
+</html>
